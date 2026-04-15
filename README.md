@@ -27,4 +27,4 @@ This is a React-based e-commerce application that allows users to:
 Jason Cassidy
 
 ## GitHub Repository
-[Link to your repository]
+
