@@ -5,56 +5,29 @@ import AboutUs from './pages/AboutUs';
 import ProductList from './components/ProductList';
 import CartItem from './components/CartItem';
 
-// Navbar component
 function Navbar() {
   const totalItems = useSelector((state) => state.cart.totalItems);
-
   return (
-    <nav style={{
-      backgroundColor: '#2d6a4f',
-      padding: '15px 30px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    }}>
-      <h1 style={{ color: 'white', margin: 0 }}>🌿 Paradise Nursery</h1>
-      <div style={{ display: 'flex', gap: '25px', alignItems: 'center' }}>
+    <nav style={{ backgroundColor: '#2d6a4f', padding: '15px 30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <h1 style={{ color: 'white' }}>🌿 Paradise Nursery</h1>
+      <div style={{ display: 'flex', gap: '25px' }}>
         <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
+        <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link>
         <Link to="/plants" style={{ color: 'white', textDecoration: 'none' }}>Plants</Link>
-        <Link to="/cart" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px' }}>
-          🛒 <span style={{ backgroundColor: '#ffb703', color: '#1b4332', borderRadius: '50%', padding: '2px 8px' }}>{totalItems}</span>
-        </Link>
+        <Link to="/cart" style={{ color: 'white', textDecoration: 'none' }}>🛒 ({totalItems})</Link>
       </div>
     </nav>
   );
 }
 
-// Landing Page Component
-function LandingPage() {
+function LandingPage({ setShowProductList }) {
   return (
     <div className="landing-container">
-      <div style={{
-        backgroundColor: 'rgba(0,0,0,0.6)',
-        padding: '50px',
-        borderRadius: '15px',
-        textAlign: 'center',
-        color: 'white',
-        maxWidth: '600px'
-      }}>
-        <h1 style={{ fontSize: '48px', marginBottom: '20px' }}>Paradise Nursery</h1>
-        <p style={{ fontSize: '20px', marginBottom: '30px' }}>
-          Bring nature home with our premium collection of indoor plants
-        </p>
+      <div style={{ backgroundColor: 'rgba(0,0,0,0.6)', padding: '50px', borderRadius: '15px', textAlign: 'center', color: 'white' }}>
+        <h1>Welcome to Paradise Nursery</h1>
+        <p>Bring nature home with our premium collection of indoor plants</p>
         <Link to="/plants">
-          <button style={{
-            backgroundColor: '#2d6a4f',
-            color: 'white',
-            border: 'none',
-            padding: '12px 30px',
-            fontSize: '18px',
-            borderRadius: '8px',
-            cursor: 'pointer'
-          }}>
+          <button style={{ backgroundColor: '#2d6a4f', color: 'white', border: 'none', padding: '12px 30px', fontSize: '18px', borderRadius: '8px' }}>
             Get Started
           </button>
         </Link>
